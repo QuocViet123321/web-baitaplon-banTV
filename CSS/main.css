@@ -32,9 +32,10 @@ a {
   right: 0;
   left: 0;
   height: 100px;
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
   z-index: 3;
   background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-brand p {
