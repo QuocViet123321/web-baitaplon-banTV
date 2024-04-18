@@ -100,9 +100,9 @@ const listProduct = [
     image: "../IMG/Tivi/tivi10.jpg",
     hangsx: "Samsung",
     Xuatxu: "Mỹ",
-    Gia: 39000000,
+    Gia: 18000000,
     sale: 1,
-    newPrice: 1900000,
+    newPrice: 39000000,
     luotmua: 1,
   },
   {
