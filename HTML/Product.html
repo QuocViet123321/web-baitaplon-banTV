@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <style>
+      body>*{
+        overflow: hidden;
+      }
+
+      .khuyenmai_box{
+        position: relative;
+        border: 10px solid red;
+        padding-top: 50px;
+        border-radius: 10px;
+      }
+
+      .khuyenmai_box::before{
+        display: table;
+        content: "Ưu đãi";
+        position: absolute;
+        width: 130px;
+        height: 40px;
+        background-color: red;
+        color: #fff;
+        font-size: 40px;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 800;
+        top: -5%;
+        right: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class=" header" style="padding-left: 30px;">
+      <!-- <marquee behavior="" direction="">Hay co gang len</marquee> -->
+      <div class="navbar navbar-expand-md">
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="Home.html" class="navbar-brand">
+          <img
+            src="../IMG/Logo/Logo.jpeg"
+            alt=""
+            style="width: 100px"
+            data-bs-toggle="tooltip"
+            title="LOGO"
+          />
+          <p>Andry</p>
+        </a>
+
+        <div class="navbar-collapse collapse">
+          <div class="navbar-nav" style="margin-right: 20px">
+            <div class="nav-item">
+              <a href="Home.html" class="nav-link text-dark" data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Trang chủ">Home</a>
+            </div>
+            <div class="nav-item">
+              <a
+                href="About.html"
+                class="nav-link text-dark"
+               
+                data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Giới thiệu"
+                >About</a
+              >
+            </div>
+
+            <div class="nav-item">
+              <a href="Contact.html" class="nav-link text-dark" 
+              data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Liên hệ">Contact</a>
+            </div>
+            <div class="nav-item">
+              <a href="Tintuc.html" class="nav-link text-dark" data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Tin tức">News</a>
+            </div>
+            <div class="nav-item"><a href="Login.html"  class="nav-link text-dark" data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Đăng Nhập">Log in</a></div>
+
+          </div>
+        </div>
+        <div class="cart " style="font-size: 30px; padding-right: 20px; "><a href="#" >
+          <a href="GioHang.html" data-bs-toggle="tooltip" data-bs-placement="left" title="Nhấn vào để xem giỏ hàng">
+              <!-- <span class="num-cart">0</span> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cart-fill cart-icon" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              </svg></a>
+      </a></div>
+      </div>
+      
+    </div>
+  </div>
+    <div class="detail_product_wrap" style="padding-inline: 50px; margin-top: 120px;">
+      <!-- Header -->
+      <div class="modal-header text-bg-white">
+        <h3 class="detail-title"></h3>
+        
+      </div>
+    </div>
+      <!--body -->
+      <div class="modal-body">
+        <div class="detail-des">
+          <h2 class="detail-price text-danger" style="padding-left: 50px;"></h2>
+          <div class="product-detail row">
+            <div class="col-lg-6" >        
+                <!-- Carousel -->
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators" >
+    <button style="background-color: #000;" type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button style="background-color: #000;" type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button style="background-color: #000;" type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner" style="margin-top: 20px;">
+    <div class="carousel-item active">
+      <img class="img_detail_product mx-auto d-block"
+      src=""
+      alt=""
+      width="80%" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="../IMG/Tivi/tivi_ca2.png" alt="Chicago" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="../IMG/Tivi/tivi_ca4.png" alt="New York" class="d-block w-100">
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span style="background-color: #000;" class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span style="background-color: #000;" class="carousel-control-next-icon"></span>
+  </button>
+</div>
+              
+          <div class="product-detail-protect row" style="margin: auto;">
+            <div class="col-lg-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+              </svg>
+              <span><b>Lắp đặt miễn phí</b> lúc giao hàng</span>
+            </div>
+            <div class="col-lg-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+              </svg>
+              <span
+                >Hư gì đổi nấy <b>12 tháng</b> tận nhà (miễn phí tháng
+                đầu)</span
+              >
+            </div>
+            <div class="col-lg-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+              </svg>
+              <span
+                >Bảo hành <b>chính hãng tivi 24 tháng</b>, có người đến tận
+                nhà</span
+              >
+            </div>
+            <div class="col-lg-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.004-.001.274-.11a.75.75 0 0 1 .558 0l.274.11.004.001zm-1.374.527L8 5.962 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339Z"/>
+              </svg>
+              <span>hùng tivi có: Remote, Chân đế</span>
+            </div>
+          </div>
+          <div class="product-detail-advertisement">
+            <img src="../IMG/Logo/logoProduct.png" alt="" />
+          </div>
+          <div class="product-detail-infomation">
+            <h5>THÔNG TIN SẢN PHẨM</h5>
+            <p>
+                <b class="info_product_name"></b>
+              <b>
+                có thiết kế tối giản, sang trọng với màn hình 55 inch, bộ xử lý
+                Regza Engine ZR tối ưu chất lượng hình ảnh, công nghệ Ultra
+                Essential PQ tái tạo khung hình chân thật, công nghệ Dolby
+                Vision IQ đảm bảo cảnh quay hiển thị đúng như ý tưởng của
+                nhà làm phim, công nghệ Dolby Atmos đem đến âm thanh vòm
+                sống động như ở rạp hát, tìm kiếm bằng giọng nói qua ứng
+                dụng VIDAA dễ dàng.</b
+              >
+            </p>
+                <img src="../IMG/Logo/quangcao7.jpg" alt="">
+              </div>
+            </div>
+            <div class="col-lg-6" style="padding-inline: 27px;">
+              <div class="product-detail-control mx-auto my-2">
+                <a  class="btn btn-success addCart" id="btn-add"
+                  >Thêm vào giỏ hàng</a
+                >
+                <a
+                  onclick="muangay()"
+                  class="btn btn-danger"
+                  id="btn-buy"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myRes"
+                  >Mua ngay</a
+                >
+              </div>
+              <div class="product-detail-des">
+                <h4></h4>
+                <table class="table table-bordered table-striped">
+                  <tr>
+                    <td>Tên sản phẩm</td>
+                    <td id="des_name"></td>
+                  </tr>
+                  <tr>
+                    <td>Hãng sản xuất</td>
+                    <td id="des_hangsx"></td>
+                  </tr>
+                  <tr>
+                    <td>Xuất xứ</td>
+                    <td id="des_xx"></td>
+                  </tr>
+                  <tr>
+                    <td>Ứng dụng phổ biến</td>
+                    <td>
+                      YouTubeNetflixClip TVFPT PlayNhaccuatuiPrime
+                      VideoiQIYIApple TVViki Disney+
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <ul class="khuyenmai_box">
+                <li>
+                  <p>Tặng 10 NĂM bảo hành không lưu ảnh.</p>
+                </li>
+                <li>
+                  <p>Giảm 20% giá bán Giá Treo khi mua kèm Tivi.</p>
+                </li>
+                <li>
+                  <p>Giảm thêm đến 200.000đ khi thanh toán qua VNPAY</p>
+                </li>
+                <li>
+                  <p>Tặng gói VIEON ALL ACCESS 8K (K+) 12 tháng ,5 kênh K+ (Sport 1, Sport 2, K+ life, Kids, Cine) trị giá : 3,108,000đ (*) Áp dụng đến 30/04/2024</p>
+                </li>
+                <li>
+                  <p>Tặng gói 6 Tháng gói SPORT Trực tiếp và Độc Quyền trị giá: 360,000đ (*) Áp dụng đến 30/04/2024</p>
+                </li>
+                <li>
+                  <p>Tặng 12 tháng xem Gói Gia Đình tiêu chuẩn trị giá: 480,000đ,Tặng 3 tháng gói Super Vip Samsung trị giá: 450,000đ,Tặng 01 tháng Gói cao cấp SMAX: 66,000đ (*)Áp dụng đến 30/04/2024</p>
+                </li>
+                <li>
+                  <p>Tặng Gói ON SS Premium: 3 tháng (VIP + K+ Cine + DA VOD)+ 2 năm Cơ bản trị giá: 1,215,000đ (*)Áp dụng đến 30/04/2024</p>
+                </li>
+              </ul>
+
+              <div class="product-detail-comments">
+                <h4>Đánh giá</h4>
+                <div class="content-comment">
+                  <div class="user-comment">
+                    <!-- <label class="my-1" for="comment-input">Viết đánh giá của bạn...</label> -->
+                    <input
+                      type="text"
+                      name=""
+                      id="comment-input"
+                      placeholder="Viết đánh giá của bạn ...."
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer border-top py-3" style="padding: 50px;">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <img src="../IMG/Logo/Logo.jpeg" alt="" width="90">
+                <h5 class="my-4">CÔNG TY TNHH ANDRY VIETNAM</h5>
+                <p>Mã Số Thuế: 0106486365</p>
+                <p>Văn phòng: tầng 5 Tòa nhà IMC, 62 Trần Quang Khải -</p>
+                <p> 273 - Đ. An Dương Vương P.3 Q.5</p>
+                <h5 class="my-4">THAM GIA BẢNG TIN CỦA CHÚNG TÔI</h5>
+                <input type="email" name="" id="" style="border: 0; outline: none; border-bottom: 1px solid #000;" placeholder="Nhập email của bạn">
+                <button style="background-color: #000; color: #fff; width: 100px; height: 30px; border: 0; outline: 0;">Đăng kí</button>
+            </div>
+            <div class="col-12 col-md-4" style="padding-left: 50px;">
+                <h5 class="my-4">CÔNG TY</h5>
+                <li>Giới thiệu về Andry</li>
+                <li>Tuyển dụng</li>
+                <li>Tin tức</li>
+                <li>Liên hệ</li>
+                <h5 class="my-4">KẾT NỐI VỚI CHÚNG TÔI</h5>
+                <div class="icon_contact">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-messenger" viewBox="0 0 16 16">
+                        <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.64.64 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.64.64 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76m5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                      </svg>
+                </div>
+            </div>
+            <div class="my-4 col-12 col-md-4" style="padding-left: 50px;">
+                <h5>CHÍNH SÁCH KHÁCH HÀNG</h5>
+                <li>Hỗ trợ đổi trả trong 3 tháng khi mua sản phẩm</li>
+                <li>Miến phí lắp đặt tại nhà</li>
+                <li>Hướng dẫn các dịch vụ</li>
+                <li>Hỗ trợ qua tổng tài 24/24</li>
+                <li>Bảo hành</li>
+            </div>
+        </div>
+    </div>
+    
+     <!-- MENU OFFCANVASS -->
+     <div class="offcanvas offcanvas-lg offcanvas-start" id="nav">
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title">MENU</h1>
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="nav-itemM">
+          <a class="nav-link text-dark" href="Home.html">Home</a>
+        </div>
+        <div class="nav-itemM">
+          <a
+            href="About.html"
+            class="nav-link text-dark"
+            
+           
+            >About</a
+          >
+        </div>
+        <div class="nav-itemM">
+          <a href="Contact.html" class="nav-link text-dark">Contact</a>
+        </div>
+        <div class="nav-itemM">
+          <a href="Tintuc.html" class="nav-link text-dark">News</a>
+        </div>
+
+        <hr class="my-4" />
+        <div class="nav-itemM">
+          <a href="Login.html" class="nav-link text-dark">Log-in</a>
+        </div>
+      </div>
+    </div>
+    <!-- JAVASCRIP -->
+    <script>
+      document.getElementsByClassName("detail-title")[0].innerHTML =
+        localStorage.getItem("name");
+      document.getElementsByClassName("detail-price")[0].innerHTML =
+        formatToVND(parseInt(localStorage.getItem("gia")));
+      document.getElementsByClassName("img_detail_product")[0].src =
+        localStorage.getItem("img");
+      document.getElementById("des_name").innerHTML =
+        localStorage.getItem("name");
+        document.getElementsByClassName("info_product_name")[0].innerHTML =
+        localStorage.getItem("name");
+      document.getElementById("des_hangsx").innerHTML =
+        localStorage.getItem("hang");
+      document.getElementById("des_xx").innerHTML =
+        localStorage.getItem("xuatxu");
+
+
+        // Call event
+        addCart()
+
+        function addCart(){
+            
+            document.getElementById('btn-add').addEventListener('click',(e)=>{
+              if(localStorage.getItem('isAccount')){
+            const name = localStorage.getItem("name");
+            const gia = localStorage.getItem("gia");
+            const img= localStorage.getItem("img");
+            
+            let listCart = localStorage.getItem('listCart')?JSON.parse(localStorage.getItem('listCart')):[];
+            if(!listCart.some(item=>{
+              return item.name == name;
+            })){
+              listCart.push({
+              name: name,
+              gia:gia,
+              img:img
+            })
+            }
+            
+            localStorage.setItem('listCart',JSON.stringify(listCart));
+
+              document.getElementById('btn-add').innerHTML = "Đã thêm vào giỏ hàng"
+              localStorage.setItem('nameValue',localStorage.getItem("name"));}
+              else{
+                alert('Vui lòng đăng nhập để có thể thêm vào giỏ hàng');
+              }
+            })
+        }
+
+        function muangay(){
+          if(localStorage.getItem('isAccount')){
+            alert('Cảm ơn bạn đã mua hàng');
+          }else{
+            alert('Bạn phải đăng nhập !')
+          }
+        }
+
+
+        function formatToVND(num) {
+          let fmt = num.toLocaleString("vi-VN");
+          fmt += "đ";
+          return fmt;
+        }
+    </script>
+    <script>
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+      function moveImg() {
+        document.getElementById("img_about").classList.add("show");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <style>
+      [class*="col-"] {
+        padding: 0;
+      }
+
+      img {
+        width: 80%;
+        height: 80%;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+      }
+
+      .row:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        h3 {
+          color: #ff0000;
+        }
+        p {
+          color: #000;
+        }
+      }
+
+      .title_tintuc.show{
+        transform: translateY(-80px);
+        opacity: 0.6;
+      }
+
+      .title_tintuc{
+        transform: translateY(0px);
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body onload="change()">
+    <div class="container">
+      <div class="container header">
+        <!-- <marquee behavior="" direction="">Hay co gang len</marquee> -->
+        <div class="navbar navbar-expand-md">
+          <button
+            class="navbar-toggler"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#nav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="Home.html" class="navbar-brand">
+            <img
+              src="../IMG/Logo/Logo.jpeg"
+              alt=""
+              style="width: 100px"
+              data-bs-toggle="tooltip"
+              title="LOGO"
+            />
+            <p>Andry</p>
+          </a>
+
+          <div class="navbar-collapse collapse">
+            <div class="navbar-nav" style="margin-right: 20px">
+              <div class="nav-item">
+                <a href="Home.html" class="nav-link text-dark" data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Trang chủ">Home</a>
+              </div>
+              <div class="nav-item">
+                <a
+                  href="About.html"
+                  class="nav-link text-dark"
+                  data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Giới thiệu"
+                  >About</a
+                >
+              </div>
+              <div class="nav-item">
+                <a href="Contact.html" class="nav-link text-dark" data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Liên hệ">Contact</a>
+              </div>
+              <div class="nav-item">
+                <a href="Tintuc.html" class="nav-link text-dark" style="
+                color: #ff0000 !important;
+                font-weight: 700;
+                font-size: 26px;
+                font-family: 'Beyond';
+                
+              "
+              data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Tin tức">News</a>
+              </div>
+              <div class="nav-item"><a href="Login.html"  class="nav-link text-dark" data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Đăng Nhập">Log in</a></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper" style="margin-top: 100px; ">
+        <h1 class="title_tintuc show"
+          style="
+            font-size: 100px;
+            text-align: center;
+            font-weight: 900;
+            font-family: math;
+            color: #ff0000;
+            text-shadow: 2px 2px 5px #000;
+          "
+        >
+          NEWS
+        </h1>
+        <table>
+          <a
+            class="row"
+            href="https://vnexpress.net/5-vat-dung-khong-nen-de-canh-tivi-4703345.html"
+          >
+            <div class="col-4">
+              <img src="../IMG/News/des_1.jpg" alt="" />
+            </div>
+            <div class="col-8">
+              <h3>5 vật dụng không nên để cạnh tivi</h3>
+              <p>
+                Dù xung quanh không gian tivi rộng đến đâu cũng không nên đặt
+                những vật dụng này bên cạnh.
+              </p>
+            </div>
+          </a>
+          
+          <a
+            class="row"
+            href="https://vnexpress.net/c-series-2023-dong-tv-cao-cap-cua-tcl-4623110.html"
+          >
+            <div class="col-4">
+              <img src="../IMG/News/des_3.jpg" alt="" />
+            </div>
+            <div class="col-8">
+              <h3>
+                Với hành trình 24 năm phát triển tại Việt Nam, TCL xác định sứ
+                mệnh của thương hiệu là "Inspire Greatness
+              </h3>
+              <p>
+                Truyền cảm hứng tuyệt vời", nỗ lực trở thành thương hiệu điện tử
+                tiêu dùng hàng đầu về màn hình, TV, điện gia dụng, thiết bị di
+                động.
+              </p>
+            </div>
+          </a>
+          <a
+            class="row"
+            href="https://vnexpress.net/mua-tivi-55-inch-nhung-man-hinh-chi-21-inch-4399625.html"
+          >
+            <div class="col-4">
+              <img src="../IMG/News/des_4.jpg" alt="" />
+            </div>
+            <div class="col-8">
+              <h3>Mua tivi 55 inch nhưng màn hình chỉ 21 inch</h3>
+              <p>
+                Chủ nhân được phen khóc dở đăng hình ảnh lên mạng xã hội than
+                vãn: "Đi mua được cái tivi 55 inch ở Taobao giá rẻ ship về tận
+                nhà.
+              </p>
+            </div>
+          </a>
+        </a>
+        <a
+          class="row"
+          href="https://vnexpress.net/lam-sach-man-hinh-tv-the-nao-cho-dung-cach-4394049.html"
+        >
+          <div class="col-4">
+            <img src="../IMG/News/des_5.jpg" alt="" />
+          </div>
+          <div class="col-8">
+            <h3>Làm sạch màn hình TV thế nào cho đúng cách</h3>
+            <p>
+                Có rất nhiều mẫu mã TV nhưng cách chung bạn có thể sử dụng để làm sạch chúng là sử dụng một miếng vải sợi nhỏ và nước sạch.
+            </p>
+          </div>
+        </a>
+        <a
+            class="row"
+            href="https://vnexpress.net/tv-sony-bravia-xr-oled-a95l-ra-mat-thi-truong-viet-nam-4691711.html"
+          >
+            <div class="col-4">
+              <img src="../IMG/News/des_2.png" alt="" />
+            </div>
+            <div class="col-8">
+              <h3>TV Sony Bravia XR OLED A95L ra mắt thị trường Việt Nam</h3>
+              <p>
+                TV Sony Bravia XR OLED A95L lên kệ cuối tháng 11 với mức giá
+                128,9 triệu đồng cho mẫu XR-77A95L và 84,8 triệu đồng cho phiên
+                bản XR-65A95L
+              </p>
+            </div>
+          </a>
+        </table>
+      </div>
+      
+    </div>
+    
+    <!-- MENU OFFCANVASS -->
+    <div class="offcanvas offcanvas-lg offcanvas-start" id="nav">
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title">MENU</h1>
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="nav-itemM">
+          <a href="Home.html">Home</a>
+        </div>
+        <div class="nav-itemM">
+          <a
+            href="About.html"
+            class="nav-link text-dark"
+            class="nav-link text-dark"
+            
+            >About</a
+          >
+        </div>
+        <div class="nav-itemM">
+          <a href="Contact.html" class="nav-link text-dark">Contact</a>
+        </div>
+        <div class="nav-itemM">
+          <a href="Tintuc.html" class="nav-link text-dark" style="color: #ff0000 !important; font-weight: 700; font-size: 26px">New</a>
+        </div>
+        <hr class="my-4" />
+        <div class="nav-itemM">
+          <a href="Login.html" class="nav-link text-dark" >Log-in</a>
+        </div>
+      </div>
+    </div>
+    <script>
+        function change(){
+            document.getElementsByClassName('title_tintuc')[0].classList.remove('show');
+        }
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+  </body>
+</html>

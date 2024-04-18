@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      @property --rotate {
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+      }
+
+      .wrapper {
+        overflow: hidden;
+        /* background-image: conic-gradient(from var(--rotate), #233d47, #fff 50%);
+        animation: effectBg 5s linear infinite; */
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url(../IMG/Logo/td1.webp);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      @keyframes effectBg {
+        from {
+          --rotate: 0deg;
+        }
+        to {
+          --rotate: -360deg;
+        }
+      }
+
+      .content_des {
+        position: absolute;
+        top: 30%;
+        left: 4%;
+        transition: all 0.5s;
+      }
+
+      .content_des.show {
+        top: 0%;
+      }
+
+      .content_des h4 {
+        font-size: 90px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .content_des p {
+        font-style: italic;
+        text-align: justify;
+      }
+
+      .btn_buy {
+        text-decoration: none;
+        color: #000;
+        border: 1px solid #fff;
+        display: block;
+        background-color: #fff;
+        width: 120px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        font-weight: 900;
+        border-radius: 10px;
+        text-align: center;
+        transition: all 0.5s;
+        transform: scale(1);
+      }
+
+      .btn_buy:hover {
+        color: #fff;
+        background-color: #000;
+      }
+
+      .img_des {
+        width: 90%;
+        height: 100vh;
+        line-height: 100vh;
+        opacity: 1;
+        transition: all 1s;
+      }
+
+      .img_des.show {
+        opacity: 0.5;
+        transform: scale(0.7);
+      }
+
+      @media (max-width: 1054px) {
+        .img_des #img_2 {
+          display: none;
+        }
+      }
+
+      @media (max-width: 998px) {
+        .img_des #img_1 {
+          display: block;
+        }
+        .content_des h1 {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body onload="change()">
+    <div class="wrapper">
+      <div class="row" style="overflow: hidden">
+        <div class="col-12 col-md-5">
+          <div class="content_des show">
+            <h4 class="title_intro" style="color: rgb(255, 255, 255)">Andry</h4>
+            <br />
+            <p class="text-white" style="width: 400px">
+              Trang web của chúng tôi cung cấp các loại Tivi đáp ứng nhu cầu
+              sinh hoạt của tất cả mọi người. Cung cấp các dịch vụ tiện lợi để
+              đáp ứng nhu cầu của khách hàng.
+            </p>
+            <a href="Home.html" class="btn_buy">Trang chủ</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-7" style="padding-right: 0; margin-right: 0">
+          <div class="img_des show">
+            <img
+              id="img_1"
+              src="../IMG/Logo/intro_img1.png"
+              alt=""
+              width="350px"
+            />
+            <img
+              id="img_2"
+              src="../IMG/Logo/intro_img2.png"
+              alt=""
+              width="240px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function change() {
+        document
+          .getElementsByClassName("content_des")[0]
+          .classList.remove("show");
+        document.getElementsByClassName("img_des")[0].classList.remove("show");
+      }
+    </script>
+  </body>
+</html>

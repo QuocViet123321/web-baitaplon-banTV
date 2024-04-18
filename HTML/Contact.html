@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <style>
+      input {
+        width: 300px !important;
+      }
+
+      label {
+        text-align: right;
+      }
+
+      span {
+        display: block;
+        color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="containerr" style="padding-inline: 70px">
+      <div class="container header">
+        <!-- <marquee behavior="" direction="">Hay co gang len</marquee> -->
+        <div class="navbar navbar-expand-md">
+          <button
+            class="navbar-toggler"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#nav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="Home.html" class="navbar-brand">
+            <img
+              src="../IMG/Logo/Logo.jpeg"
+              alt=""
+              style="width: 100px"
+              data-bs-toggle="tooltip"
+              title="LOGO"
+            />
+            <p>Andry</p>
+          </a>
+
+          <div class="navbar-collapse collapse">
+            <div class="navbar-nav" style="margin-right: 20px">
+              <div class="nav-item">
+                <a
+                  href="Home.html"
+                  class="nav-link text-dark"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Trang chủ"
+                  >Home</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  href="About.html"
+                  class="nav-link text-dark"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Giới thiệu"
+                  >About</a
+                >
+              </div>
+
+              <div class="nav-item">
+                <a
+                  href="Contact.html"
+                  class="nav-link text-dark"
+                  style="
+                    color: #ff0000 !important;
+                    font-weight: 700;
+                    font-size: 26px;
+                    font-family: 'Beyond';
+                  "
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Liện hệ"
+                  >Contact</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  href="Tintuc.html"
+                  class="nav-link text-dark"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Tin tức"
+                  >News</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  href="Login.html"
+                  class="nav-link text-dark"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Đăng Nhập"
+                  >Log in</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper" style="margin-top: 150px">
+        <form action="">
+          <div class="row">
+            <div class="col-12 col-md-7">
+              <div
+                class="box"
+                style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); padding: 20px"
+              >
+                <h1
+                  class="text-center"
+                  style="font-size: 50px; font-weight: 900"
+                >
+                  Contact us
+                </h1>
+                <h4 class="text-center">
+                  <i>Bạn có bất kỳ câu hỏi nào cho chúng tôi ?</i>
+                </h4>
+                <div class="row">
+                  <label class="col-4" for="">Họ và tên:</label>
+                  <div class="col-8">
+                    <input
+                      onblur="ckHo()"
+                      id="ho"
+                      type="text"
+                      placeholder="VD: Lê Quốc Việt"
+                    />
+                    <span id="mgho"></span>
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <label class="col-4" for="">Số điện thoại:</label>
+                  <div class="col-8">
+                    <input
+                      onblur="ckPhone()"
+                      id="phone"
+                      type="text"
+                      placeholder="VD: 0356XXXXXXX"
+                    />
+                    <span id="mgphone"></span>
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <label class="col-4" for="">Email:</label>
+                  <div class="col-8">
+                    <input
+                      onblur="ckEmail()"
+                      id="email"
+                      type="email"
+                      placeholder="VD: viet002@gmail.com"
+                    />
+                    <span id="mgemail"></span>
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <label class="col-4" for="">Lời nhắn:</label>
+                  <div class="col-8">
+                    <textarea
+                      onblur="ckTin()"
+                      id="tinnhan"
+                      name=""
+                      id=""
+                      cols="3"
+                      rows="10"
+                      style="width: 300px; height: 100px"
+                      placeholder="Chúc bạn một ngày tốt lành !"
+                    ></textarea>
+                    <span id="mgtinnhan"></span>
+                  </div>
+                </div>
+                <br />
+                <button
+                  type="submit"
+                  id="btn_send"
+                  class="btn btn-secondary"
+                  style="
+                    width: 120px;
+                    display: block;
+                    margin: auto;
+                    height: 50px;
+                    font-size: 20px;
+                    line-height: 40px;
+                    font-weight: 600;
+                  "
+                >
+                  Gữi
+                </button>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-5">
+              <!-- <iframe
+                style="margin-top: 5px"
+                width="100%"
+                height="450"
+                src="https://maps.google.com/maps?width=100%&amp;height=450&amp;hl=en&amp;coord=10.759660000323064,106.68192160315813&amp;q=273%20An%20D%C6%B0%C6%A1ng%20V%C6%B0%C6%A1ng%20Ph%C6%B0%E1%BB%9Dng%203%20Qu%E1%BA%ADn%205%20H%E1%BB%93%20Ch%C3%AD%20Minh%20700000%2C%20Vi%E1%BB%87t%20Nam+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                ><a href="https://www.maps.ie/create-google-map/"
+                  >Embed Google Map
+                </a>
+              </iframe> -->
+              <img
+                src="../IMG/Logo/google_map.png"
+                alt=""
+                style="width: 100%"
+              />
+              <br />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- MENU OFFCANVASS -->
+    <div class="offcanvas offcanvas-lg offcanvas-start" id="nav">
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title">MENU</h1>
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="nav-itemM">
+          <a href="Home.html">Home</a>
+        </div>
+        <div class="nav-itemM">
+          <a
+            href="About.html"
+            class="nav-link text-dark"
+            class="nav-link text-dark"
+            >About</a
+          >
+        </div>
+        <div class="nav-itemM">
+          <a
+            href="Contact.html"
+            class="nav-link text-dark"
+            style="color: #ff0000 !important; font-weight: 700; font-size: 26px"
+            >Contact</a
+          >
+        </div>
+        <div class="nav-itemM">
+          <a
+            href="Tintuc.html"
+            class="nav-link text-dark"
+            class="nav-link text-dark"
+            >News</a
+          >
+        </div>
+        <hr class="my-4" />
+        <div class="nav-itemM">
+          <a href="Login.html" class="nav-link text-dark">Log-in</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      function ckHo() {
+        const value = document.getElementById("ho").value;
+        let rg = /^([A-Z]{1}[a-z]*)(\s[A-Z]{1}[a-z]*)*(\s[A-Z]{1}[a-z]*)$/;
+        if (!rg.test(value)) {
+          document.getElementById("mgho").innerHTML =
+            "Họ tên: Phải có ít nhất Họ, Tên. Ký tự đầu bắt buộc phải viết hoa";
+          return false;
+        } else {
+          document.getElementById("mgho").innerHTML = "";
+          return true;
+        }
+      }
+
+      function ckPhone() {
+        const value = document.getElementById("phone").value;
+        let rg = /^(09||03||07||06||05||04)[0-9]{8}$/;
+        if (!rg.test(value)) {
+          document.getElementById("mgphone").innerHTML =
+            "Điện thoại phải là số điện thoại 10 ký tự số, bắt đầu là 09, 03, 07, 06, 05, 04 !";
+          return false;
+        } else {
+          document.getElementById("mgphone").innerHTML = "";
+          return true;
+        }
+      }
+
+      function ckEmail() {
+        const value = document.getElementById("email").value;
+        let rg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!rg.test(value)) {
+          document.getElementById("mgemail").innerHTML = "Email không hợp lệ !";
+          return false;
+        } else {
+          document.getElementById("mgemail").innerHTML = "";
+          return true;
+        }
+      }
+
+      function ckTin() {
+        const value = document.getElementById("tinnhan").value;
+        if (value == "") {
+          document.getElementById("mgtinnhan").innerHTML =
+            "Nội dung không để rỗng !";
+          return false;
+        } else {
+          document.getElementById("mgtinnhan").innerHTML = "";
+          return true;
+        }
+      }
+
+      document.getElementById("btn_send").addEventListener("click", (e) => {
+        e.preventDefault();
+        if (ckHo() && ckPhone() && ckEmail() && ckTin()) {
+          alert("Cảm ơn bạn đã hồi đáp !");
+          document.getElementById("ho").value = "";
+          document.getElementById("phone").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("tinnhan").value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

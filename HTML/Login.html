@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/bootstrap.bundle.js"></script>
+    <style>
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 5px 20px;
+        height: 30px;
+      }
+
+      .header span {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 500;
+      }
+
+      .btn-close {
+        font-size: 28px;
+        margin-top: 15px;
+      }
+
+      .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      }
+
+      .box-content {
+        width: 500px;
+        max-width: 100%;
+        height: auto;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+      }
+
+      .box-header {
+        height: 60px;
+        text-align: center;
+        line-height: 50px;
+        font-weight: 800;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .box-body {
+        padding: 20px 30px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .box-body > input {
+        height: 50px;
+      }
+
+      .box-pw {
+        display: inline;
+        float: right;
+      }
+
+      .icon-pw {
+        display: none;
+      }
+
+      .icon-pw.actived {
+        display: inline;
+      }
+
+      .box-footer {
+        text-align: center;
+        height: 100px;
+      }
+
+      .box-footer a {
+        display: block;
+        color: red !important;
+        text-decoration: none;
+        cursor: pointer;
+        margin-top: 5px;
+      }
+
+      .box-footer > input {
+        width: 80%;
+        height: 50px;
+        font-size: 20px;
+        margin-top: 10px;
+        border-radius: 20px;
+      }
+
+      label {
+        font-weight: 800;
+      }
+
+      /* Danger */
+      :is(
+          .form-email.warning,
+          .form-pw.warning,
+          .form-usr.warning,
+          .form-comfirm-pw.warning
+        )
+        :where(.form-label, .form-control, p) {
+        color: red;
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container form_log">
+      <div class="header">
+        <div class="header-img p-2">
+          <a style="color: #000; text-decoration: none" href="Home.html"
+            ><img
+              src="../IMG/Logo/Logo.jpeg"
+              alt=""
+              style="width: 100px; cursor: pointer"
+              data-bs-toggle="tooltip"
+              title="Đây là LOGO"
+            />
+            <span>Andry</span></a
+          >
+        </div>
+        <!-- <a class="btn btn-close" href="javascript:history.back()"></a> -->
+      </div>
+      <div class="body">
+        <form class="box-content">
+          <h2 class="box-header">ĐĂNG NHẬP</h2>
+          <div class="box-body">
+            <div class="form-usr">
+              <label class="form-label" for="UserInput">Username</label>
+              <input
+                onblur="ckUserName()"
+                class="form-control"
+                type="text"
+                name=""
+                id="UserInput"
+              />
+              <p></p>
+            </div>
+            <div class="form-email">
+              <label class="form-label" for="emailInput">Email</label>
+              <input
+                onblur="ckEmail()"
+                class="form-control"
+                type="email"
+                name=""
+                id="emailInput"
+                required
+              />
+              <p></p>
+            </div>
+            <br />
+            <div class="form-pw">
+              <label class="form-label" for="pwInput">Password</label>
+              <div class="box-pw">
+                <span class="icon-pw actived">
+                  <i class="icon-pw actived fa-solid fa-eye"></i>
+                </span>
+                <span class="icon-pw">
+                  <i class="icon-pw fa-solid fa-eye-slash"></i>
+                </span>
+              </div>
+              <input
+                onblur="ckPW()"
+                class="form-control"
+                type="password"
+                name=""
+                id="pwInput"
+                required
+              />
+              <p></p>
+            </div>
+          </div>
+          <br />
+          <div class="box-footer">
+            <div class="btn btn-secondary" id="btnLogin">Đăng nhập</div>
+            <a href="Signup.html">Bạn chưa có tài khoản ?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementById("btnLogin").addEventListener("click", (e) => {
+        if (ckUserName() && ckEmail() && ckPW()) {
+          if (
+            localStorage.getItem(
+              document.getElementById("UserInput").value.trim()
+            )
+          ) {
+            var username = document.getElementById("UserInput").value.trim();
+            var email = document.getElementById("emailInput").value.trim();
+            var password = document.getElementById("pwInput").value.trim();
+            let user = localStorage.getItem(username);
+            let data = JSON.parse(user);
+            if (
+              username == data.username &&
+              email == data.email &&
+              password == data.password
+            ) {
+              localStorage.setItem("account", JSON.stringify(data));
+              localStorage.setItem("isAccount", true);
+              window.location.href = "Account.html";
+            } else {
+              alert(
+                "Tài khoản không tồn tại. Vui lòng nhập thông tin chính xác !"
+              );
+            }
+          } else {
+            alert(
+              "Tài khoản không tồn tại. Vui lòng nhập thông tin chính xác !"
+            );
+          }
+        }
+      });
+
+      showIconHide();
+
+      function showIconHide() {
+        const iconPW = document.getElementsByClassName("icon-pw");
+        // console.log(iconPW)
+        for (i = 0; i < iconPW.length; i++) {
+          iconPW[i].addEventListener("click", (e) => {
+            for (j = 0; j < iconPW.length; j++) {
+              iconPW[j].classList.toggle("actived");
+              if (!iconPW[0].classList.contains("actived")) {
+                document.getElementById("pwInput").type = "text";
+              } else {
+                document.getElementById("pwInput").type = "password";
+              }
+            }
+          });
+        }
+      }
+
+      function Validator() {
+        // EMAIL
+        ckEmail();
+        //PASSWORD
+        ckPW();
+
+        ckUserName();
+        // COMFIRM PASSWORD
+      }
+
+      // Check UserName
+      function ckUserName() {
+        const e = document.getElementById("UserInput");
+        let regex = /(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]{3,}/;
+        ///((?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*()]).{8,})/
+        if (!regex.test(e.value)) {
+          e.parentNode.lastElementChild.innerText =
+            "Trường này không được trống, ít nhất 3 ký tự, phải gồm chữ và số !";
+          e.parentNode.classList.add("warning");
+          return false;
+        } else {
+          e.parentNode.lastElementChild.innerText = "";
+          e.parentNode.classList.remove("warning");
+          return true;
+        }
+
+        e.oninput = function () {
+          e.parentNode.lastElementChild.innerText = "";
+          e.parentNode.classList.remove("warning");
+        };
+      }
+      // Check Email
+      function ckEmail() {
+        const e = document.getElementById("emailInput");
+
+        var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        const valueInput = regex.test(e.value.trim())
+          ? undefined
+          : "Trường này phải là email !";
+        if (valueInput) {
+          e.parentNode.lastElementChild.innerText = valueInput;
+          e.parentNode.classList.add("warning");
+          return false;
+        } else {
+          e.parentNode.lastElementChild.innerText = "";
+          e.parentNode.classList.remove("warning");
+          return true;
+        }
+
+        e.oninput = function () {
+          e.parentNode.lastElementChild.innerText = "";
+          e.parentNode.classList.remove("warning");
+        };
+      }
+      // Check Password
+      function ckPW() {
+        const e = document.getElementById("pwInput");
+
+        const valueInput =
+          e.value.trim().length >= 6
+            ? undefined
+            : "Không đủ kí tự (không tính khoảng cách). Phải từ 6 kí tự trở lên ! ";
+        if (valueInput) {
+          e.parentNode.lastElementChild.innerText = valueInput;
+          e.parentNode.classList.add("warning");
+          return false;
+        } else {
+          e.parentNode.lastElementChild.innerText = "";
+          e.parentNode.classList.remove("warning");
+          return true;
+        }
+
+        e.oninput = function (e) {
+          e.parentNode.lastElementChild.innerText = "";
+          e.parentNode.classList.remove("warning");
+        };
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <style>
+      [class*="col-"] {
+        padding: 0;
+      }
+
+      h1 {
+        font-weight: 900;
+        text-align: center;
+      }
+      p {
+        text-align: justify;
+        font-size: 20px;
+      }
+
+      .about_img {
+        margin: auto;
+        text-align: center;
+      }
+
+      .about_img > img {
+        width: 100%;
+        margin: auto;
+      }
+
+      .box_img_about > img {
+        margin-top: 10px;
+      }
+
+      #img_about {
+        transform: translateY(-120%);
+        opacity: 0.5;
+        transition: all 0.4s ease-out;
+      }
+
+      #img_about.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .box_des {
+        border: 10px solid #ccc;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      p {
+        text-indent: 20px;
+        text-align: justify;
+      }
+
+      
+    </style>
+  </head>
+  <body onload="moveImg()">
+    <div class="container">
+      <div class="container header">
+        <!-- <marquee behavior="" direction="">Hay co gang len</marquee> -->
+        <div class="navbar navbar-expand-md">
+          <button
+            class="navbar-toggler"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#nav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="Home.html" class="navbar-brand">
+            <img
+              src="../IMG/Logo/Logo.jpeg"
+              alt=""
+              style="width: 100px"
+              data-bs-toggle="tooltip"
+              title="LOGO"
+            />
+            <p>Andry</p>
+          </a>
+
+          <div class="navbar-collapse collapse">
+            <div class="navbar-nav" style="margin-right: 20px">
+              <div class="nav-item">
+                <a href="Home.html" class="nav-link text-dark" data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Trang chủ">Home</a>
+              </div>
+              <div class="nav-item">
+                <a
+                  href="About.html"
+                  class="nav-link"
+                  style="
+                    color: #ff0000 !important;
+                    font-weight: 700;
+                    font-size: 26px;
+                    font-family: 'Beyond';
+                  "
+                  data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Giới thiệu"
+                  >About</a
+                >
+              </div>
+
+              <div class="nav-item">
+                <a href="Contact.html" class="nav-link text-dark" 
+                data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Liên hệ">Contact</a>
+              </div>
+              <div class="nav-item">
+                <a href="Tintuc.html" class="nav-link text-dark" data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Tin tức">News</a>
+              </div>
+              <div class="nav-item"><a href="Login.html"  class="nav-link text-dark" data-bs-toggle = "tooltip" data-bs-placement="bottom" title="Đăng Nhập">Log in</a></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about_img" style="margin-top: 130px">
+        <img
+          id="img_about"
+          src="../IMG/Logo/TiviGioiThieu.jpg"
+          alt=""
+          style="
+            border-radius: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+            margin-bottom: 30px;
+          "
+        />
+      </div>
+      
+        
+      <h1>Giới thiệu</h1>
+      <div class="box_des">
+        <img
+          src="../IMG/Logo/intro_img1.png"
+          alt=""
+          style="width: 315px; float: left"
+        />
+        <p><h4 style="display: inline-block;">Chủ sở hữu:</h4><i style="font-size: 20px;"> Lê Quốc Việt</i></p>
+        <p><h4 style="display: inline-block;">MSSV:</h4><i style="font-size: 20px;"> 22638111</i></p>
+        <p><h4 style="display: inline-block;">Lớp học phần:</h4><i style="font-size: 20px;"> DHKTPM18B</i></p>
+        <p><h4 style="display: inline-block;">STT:</h4><i style="font-size: 20px;"> 75</i></p>
+        <br>
+        <li style="text-indent: 70px;">
+          Website cung cấp tất cả các loại TiVi đáp ứng nhu cầu
+          mua sắm của khách hàng
+      </li>
+        
+        <li style="text-indent: 70px;">Một chiếc Tivi ngày nay đã trở thành một thiết bị không thể thiếu trong hầu hết các gia đình. Sự cần thiết của nó đến từ những lợi ích và trải nghiệm mà nó mang lại.</li>
+        <li style="text-indent: 70px;" ><b>Trong thời đại công nghệ số phát triển mạnh mẽ</b> như hiện nay, một chiếc Tivi không chỉ đơn thuần là một món đồ trang trí trong phòng khách, mà còn là một công cụ giải trí và thông tin vô cùng cần thiết. Với màn hình rộng và chất lượng hình ảnh ngày càng cao, Tivi đã trở thành cửa sổ kết nối với thế giới.</li>
+        <li style="text-indent: 70px;">
+          Trong thời đại công nghệ số phát triển mạnh mẽ như hiện nay, một chiếc Tivi không chỉ đơn thuần là một món đồ trang trí trong phòng khách, mà còn là một công cụ giải trí và thông tin vô cùng cần thiết. Với màn hình rộng và chất lượng hình ảnh ngày càng cao, Tivi đã trở thành cửa sổ kết nối với thế giới. Để có thể giúp cho việc mua sắm một cách dễ dàng, thuận tiện. Tôi đã xây dựng nên  Website bán Tivi trực tuyến
+        </li>
+      </div>
+
+      <br />
+      <div class="row box_img_about" style="padding-bottom: 100px">
+        <img
+          class="col col-lg-6"
+          src="../IMG/Logo/des1.webp"
+          alt=""
+          style="border-radius: 2px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.6)"
+        />
+        <!-- <img class="col col-lg-4" src="../IMG/Logo/des2.webp" alt="" /> -->
+        <img
+          class="col col-lg-6"
+          src="../IMG/Logo/des3.webp"
+          alt=""
+          style="border-radius: 2px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.6)"
+        />
+      </div>
+    </div>
+
+    <!-- MENU OFFCANVASS -->
+    <div class="offcanvas offcanvas-lg offcanvas-start" id="nav">
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title">MENU</h1>
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="nav-itemM">
+          <a href="Home.html">Home</a>
+        </div>
+        <div class="nav-itemM">
+          <a
+            href="About.html"
+            class="nav-link text-dark"
+            class="nav-link text-dark"
+            style="color: #ff0000 !important; font-weight: 700; font-size: 26px"
+            >About</a
+          >
+        </div>
+        <div class="nav-itemM">
+          <a href="Contact.html" class="nav-link text-dark">Contact</a>
+        </div>
+        <div class="nav-itemM">
+          <a href="Tintuc.html" class="nav-link text-dark">News</a>
+        </div>
+
+        <hr class="my-4" />
+        <div class="nav-itemM">
+          <a href="Login.html" class="nav-link text-dark">Log-in</a>
+        </div>
+      </div>
+    </div>
+    <!-- JAVASCRIP -->
+    <script src="../JS/main.js"></script>
+    <script>
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+      function moveImg() {
+        document.getElementById("img_about").classList.add("show");
+      }
+    </script>
+    
+  </body>
+</html>

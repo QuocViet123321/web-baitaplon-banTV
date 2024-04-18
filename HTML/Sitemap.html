@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <style>
+      .wrap {
+        padding-inline: 20px;
+        margin-top: 100px;
+        text-align: left;
+      }
+
+      .wrap img {
+        width: 500px;
+        min-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header" style="padding-left: 50px">
+      <!-- <marquee behavior="" direction="">Hay co gang len</marquee> -->
+      <div class="navbar navbar-expand-md">
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="Home.html" class="navbar-brand">
+          <img
+            src="../IMG/Logo/Logo.jpeg"
+            alt=""
+            style="width: 100px"
+            data-bs-toggle="tooltip"
+            title="LOGO"
+          />
+          <p>Andry</p>
+        </a>
+      </div>
+    </div>
+    <div class="wrap row">
+      <div class="col-12 col-md-6">
+        <img src="../IMG/Logo/sitemap2.png" alt="" />
+      </div>
+      <div class="col-12 col-md-6">
+        <h1
+          style="
+            font-size: 100px;
+            color: red;
+            font-family: 'Times New Roman', Times, serif;
+          "
+        >
+          SITEMAP
+        </h1>
+        <h4>
+          <i>Đây là sitemap của web giới thiệu, mua bán TV trực tuyến.</i>
+        </h4>
+      </div>
+    </div>
+    <div class="offcanvas offcanvas-lg offcanvas-start" id="nav">
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title">MENU</h1>
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="nav-itemM">
+          <a href="Home.html" class="nav-link text-dark">Home</a>
+        </div>
+        <div class="nav-itemM">
+          <a href="About.html" class="nav-link text-dark">About</a>
+        </div>
+        <div class="nav-itemM">
+          <a href="Contact.html" class="nav-link text-dark">Contact</a>
+        </div>
+        <div class="nav-itemM">
+          <a href="Tintuc.html" class="nav-link text-dark">News</a>
+        </div>
+        <hr class="my-4" />
+        <div class="nav-itemM">
+          <a href="Login.html" class="nav-link text-dark">Log in</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

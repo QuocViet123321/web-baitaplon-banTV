@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <style>
+      [class*="col-"] {
+        margin: 0;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 5px 20px;
+        height: 80px;
+      }
+
+      .header span {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 500;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .card-cart h3 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header" style="padding-left: 30px">
+      <!-- <marquee behavior="" direction="">Hay co gang len</marquee> -->
+      <div class="navbar navbar-expand-md">
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="Home.html" class="navbar-brand">
+          <img
+            src="../IMG/Logo/Logo.jpeg"
+            alt=""
+            style="width: 100px"
+            data-bs-toggle="tooltip"
+            title="LOGO"
+          />
+          <p>Andry</p>
+        </a>
+
+        <div class="navbar-collapse collapse">
+          <div class="navbar-nav" style="margin-right: 20px">
+            <div class="nav-item">
+              <a
+                href="Home.html"
+                class="nav-link text-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Trang chủ"
+                >Home</a
+              >
+            </div>
+            <div class="nav-item">
+              <a
+                href="About.html"
+                class="nav-link text-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Giới thiệu"
+                >About</a
+              >
+            </div>
+
+            <div class="nav-item">
+              <a
+                href="Contact.html"
+                class="nav-link text-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Liên hệ"
+                >Contact</a
+              >
+            </div>
+            <div class="nav-item">
+              <a
+                href="Tintuc.html"
+                class="nav-link text-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Tin tức"
+                >News</a
+              >
+            </div>
+            <div class="nav-item">
+              <a
+                href="Login.html"
+                class="nav-link text-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Đăng Nhập"
+                >Log in</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1
+      style="
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        background-color: #ccc;
+        margin-inline: auto;
+        padding: 10px;
+        color: #000;
+        border-radius: 10px;
+        width: 300px;
+        font-weight: 800;
+      "
+    >
+      Giỏ hàng
+    </h1>
+    <div class="row" style="padding: 20px" id="wrap">
+      <div
+        class="col-12 col-md-8"
+        style="
+          padding-inline: 50px;
+          border: 1px solid #ccc;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          min-height: calc(60vh);
+        "
+        id="listCartProduct"
+      >
+        <div id="cart_empty" style="width: 30% !important; margin: auto">
+          <img src="../IMG/Logo/icon-cart1.png" alt="" width="70%" />
+          <h1 style="text-align: center">Chưa có sản phẩm nào !</h1>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="box_thanhtoan" style="margin-top: 0px">
+          <h2
+            style="
+              text-align: center;
+              font-weight: 800;
+              background-color: #ccc;
+              color: #fff;
+
+              margin-bottom: 0;
+            "
+          >
+            Thành tiền
+          </h2>
+          <div class="" style="min-height: 100px; background-color: #eaeaea">
+            <h3 style="padding: 10px">
+              TỔNG:
+              <p id="Tongtien" style="color: red; display: inline-block"></p>
+            </h3>
+            <div
+              onclick="thanhtoan()"
+              class="btn btn-secondary"
+              style="width: 60%; display: block; margin: auto"
+            >
+              Đặt hàng
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      if (!localStorage.getItem("isAccount")) {
+        document.getElementById(
+          "wrap"
+        ).innerHTML = `<h1 style="text-align:center">Bạn phải đăng nhập !</h1>`;
+      }
+
+      let data = JSON.parse(localStorage.getItem("listCart"));
+      console.log(data.length);
+      console.log(data.length == 0);
+      isEmpty();
+      function isEmpty() {
+        if (data.length == 0) {
+          document.getElementById("cart_empty").style.display = "block";
+        } else {
+          document.getElementById("cart_empty").style.display = "none";
+        }
+      }
+      const htmls = data.map((item) => {
+        return `<div
+          class="card-cart row"
+          style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); margin-block: 10px"
+        >
+          <div class="col-4">
+            <div class="des_cart">
+              <img src="${item.img}" alt="" />
+            </div>
+          </div>
+          <div class="col-8" style="padding-right: 0">
+            <h3>${item.name}</h3>
+            <h4>
+              Giá:
+              <p class="text-danger" style="display: inline-block">${formatToVND(
+                parseInt(item.gia)
+              )}</p>
+            </h4>
+            <div class="input-group">
+              <span class="input-group-text " style="font-size: 14px"
+                >Số lượng</span
+              >
+              <span style="width: 120px"
+                ><input
+                  value="1"
+                  style="border-radius: 0"
+                  type="number"
+                  min="1"
+                  class="form-control soluong"
+              />
+              <p style="display:none">${item.gia}</p></span>
+            </div>
+            <span style="display:block;color:red;"></span>
+            <div
+              class="btn_delete btn btn-danger"
+              style="float: right; width: 100px; border-radius: 0px"
+            >
+              Xóa
+            </div>
+          </div>
+        </div>`;
+      });
+      document.getElementById("listCartProduct").innerHTML = htmls.join("\n");
+
+      const btnXoa = document.getElementsByClassName("btn_delete");
+      for (i = 0; i < btnXoa.length; i++) {
+        btnXoa[i].addEventListener("click", (e) => {
+          let value =
+            e.target.previousElementSibling.previousElementSibling
+              .previousElementSibling.previousElementSibling.innerHTML;
+          let listNew = data.filter((item) => {
+            return item.name != value;
+          });
+          if (listNew.length <= 0) {
+            localStorage.setItem("listCart", []);
+          } else {
+            localStorage.setItem("listCart", JSON.stringify(listNew));
+          }
+          location.reload();
+        });
+      }
+
+      total();
+      const inputSoluong = document.getElementsByClassName("soluong");
+      for (i = 0; i < inputSoluong.length; i++) {
+        let tongtien = 0;
+        inputSoluong[i].addEventListener("input", (e) => {
+          for (i = 0; i < inputSoluong.length; i++) {
+            tongtien +=
+              parseInt(e.target.nextElementSibling.innerHTML) *
+              parseInt(e.target.value);
+            document.getElementById("Tongtien").innerHTML = tongtien
+              ? formatToVND(tongtien)
+              : "";
+          }
+        });
+      }
+
+      let value = 0;
+      console.log(document.querySelectorAll(".soluong"));
+      document.querySelectorAll(".soluong").forEach((item) => {
+        item.addEventListener("input", (e) => {
+          if (parseInt(e.target.value) < 0) {
+            e.target.parentNode.parentNode.nextElementSibling.innerHTML =
+              "Số lượng lớn hơn hoặc bằng 0";
+          } else {
+            e.target.parentNode.parentNode.nextElementSibling.innerHTML = "";
+            total(e);
+          }
+        });
+      });
+
+      function total(e) {
+        let value = 0;
+        document.querySelectorAll(".soluong").forEach((item) => {
+          const price = parseInt(item.nextElementSibling.innerHTML);
+          const quantity = parseInt(item.value);
+          value += price * quantity;
+          if (value > 0) {
+            document.getElementById("Tongtien").innerHTML = value
+              ? formatToVND(value)
+              : "";
+          } else {
+            document.getElementById("Tongtien").innerHTML = "";
+          }
+        });
+      }
+
+      function formatToVND(num) {
+        const fmt = num.toLocaleString("vi-VN") + "đ";
+        return fmt;
+      }
+
+      function thanhtoan() {
+        if (data.length > 0) {
+          alert("Cảm ơn bạn đã mua hàng.");
+          localStorage.setItem("listCart", []);
+          location.reload();
+        }
+      }
+    </script>
+  </body>
+</html>

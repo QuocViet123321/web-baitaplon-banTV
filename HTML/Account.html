@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../CSS/main.css" />
+  </head>
+  <body>
+    <div class="containerr" style="padding-inline: 70px">
+      <div class="container header">
+        <!-- <marquee behavior="" direction="">Hay co gang len</marquee> -->
+        <div class="navbar navbar-expand-md">
+          <button
+            class="navbar-toggler"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#nav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="Home.html" class="navbar-brand">
+            <img
+              src="../IMG/Logo/Logo.jpeg"
+              alt=""
+              style="width: 100px"
+              data-bs-toggle="tooltip"
+              title="LOGO"
+            />
+            <p>Andry</p>
+          </a>
+
+          <div class="navbar-collapse collapse">
+            <div class="navbar-nav" style="margin-right: 20px">
+              <div class="nav-item">
+                <a
+                  href="Home.html"
+                  class="nav-link text-dark"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Trang chủ"
+                  >Home</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  href="About.html"
+                  class="nav-link text-dark"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Giới thiệu"
+                  >About</a
+                >
+              </div>
+
+              <div class="nav-item">
+                <a
+                  href="Contact.html"
+                  class="nav-link text-dark"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Liên hệ"
+                  >Contact</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  href="Tintuc.html"
+                  class="nav-link text-dark"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Tin tức"
+                  >News</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  href="Login.html"
+                  class="nav-link text-dark"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Đăng Nhập"
+                  >Log in</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="box_account"
+        style="
+          padding: 10px;
+          margin-top: 130px;
+          display: flex;
+          justify-content: center;
+          height: auto;
+        "
+      >
+        <div class="account" style="text-align: center">
+          <div class="account_img">
+            <img src="../IMG/Logo/account.png" alt="" style="width: 230px" />
+          </div>
+          <div class="account_des">
+            <h1 class="text-center" id="account_name"></h1>
+            <h5>Email: <i id="email"></i></h5>
+            <h5>Phone: <i id="phone"></i></h5>
+            <h5>Address: <i id="address"></i></h5>
+          </div>
+          <a
+            id="btn_state"
+            href="Login.html"
+            class="btn btn-secondary"
+            style="margin: auto"
+            >Đăng nhập</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- MENU OFFCANVASS -->
+    <div class="offcanvas offcanvas-lg offcanvas-start" id="nav">
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title">MENU</h1>
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="nav-itemM">
+          <a href="Home.html">Home</a>
+        </div>
+        <div class="nav-itemM">
+          <a href="About.html" class="nav-link text-dark">About</a>
+        </div>
+        <div class="nav-itemM">
+          <a href="Contact.html" class="nav-link text-dark">Contact</a>
+        </div>
+        <div class="nav-itemM">
+          <a
+            href="Tintuc.html"
+            class="nav-link text-dark"
+            class="nav-link text-dark"
+            >News</a
+          >
+        </div>
+        <hr class="my-4" />
+        <div class="nav-itemM">
+          <a href="Login.html" class="nav-link text-dark">Log-in</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      let username = JSON.parse(localStorage.getItem("account"));
+      document.getElementById("account_name").innerHTML = username.username;
+      document.getElementById("email").innerHTML = username.email;
+      document.getElementById("phone").innerHTML = username.phone;
+      document.getElementById("address").innerHTML = username.address;
+
+      if (!username.username) {
+        document.getElementById("btn_state").innerHTML = "Đăng nhập";
+      } else {
+        document.getElementById("btn_state").innerHTML = "Đăng xuất";
+      }
+    </script>
+  </body>
+</html>
