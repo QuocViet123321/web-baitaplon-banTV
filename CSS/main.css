@@ -35,7 +35,7 @@ a {
   /* border-bottom: 1px solid #ccc; */
   z-index: 3;
   background-color: #fff;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5) !important;
 }
 
 .navbar-brand p {
