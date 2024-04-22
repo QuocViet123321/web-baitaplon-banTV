@@ -352,7 +352,7 @@
       function ckDataInput() {
         const x = document.getElementsByClassName("soluong");
         for (i = 0; i < x.length; i++) {
-          if (parseInt(x[i].value) <= 0 || !Number.isNaN(x[i].value)) {
+          if (parseInt(x[i].value) <= 0 || isNaN(parseInt(x[i].value))) {
             return false;
           }
         }
