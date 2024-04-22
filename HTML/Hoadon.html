@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .nameProduct {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+      }
+
+      .product {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header" style="padding-left: 30px !important">
+      <!-- <marquee behavior="" direction="">Hay co gang len</marquee> -->
+      <div class="navbar navbar-expand-md">
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="Home.html" class="navbar-brand">
+          <img
+            src="../IMG/Logo/Logo.jpeg"
+            alt=""
+            style="width: 100px"
+            data-bs-toggle="tooltip"
+            title="LOGO"
+          />
+          <p>Andry</p>
+        </a>
+
+        <div class="navbar-collapse collapse">
+          <div class="navbar-nav" style="margin-right: 20px">
+            <div class="nav-item">
+              <a
+                href="Home.html"
+                class="nav-link text-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Trang chủ"
+                >Home</a
+              >
+            </div>
+            <div class="nav-item">
+              <a
+                href="About.html"
+                class="nav-link text-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Giới thiệu"
+                >About</a
+              >
+            </div>
+
+            <div class="nav-item">
+              <a
+                href="Contact.html"
+                class="nav-link text-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Liên hệ"
+                >Contact</a
+              >
+            </div>
+            <div class="nav-item">
+              <a
+                href="Tintuc.html"
+                class="nav-link text-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Tin tức"
+                >News</a
+              >
+            </div>
+            <div class="nav-item">
+              <a
+                href="Login.html"
+                class="nav-link text-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Đăng Nhập"
+                >Log in</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 130px">
+      <h1
+        style="
+          font-weight: bold;
+          text-align: center;
+          border-bottom: 1px solid #000;
+        "
+      >
+        HÓA ĐƠN
+      </h1>
+      <div class="part_infoAccount">
+        <h2>THÔNG TIN TÀI KHOẢN</h2>
+        <h5>
+          Username:
+          <span id="username" style="display: inline-block"></span>
+        </h5>
+        <h5>
+          Số điện thoại:
+          <span id="phone" style="display: inline-block"></span>
+        </h5>
+        <h5>
+          Địa chỉ:
+          <span id="address"></span>
+        </h5>
+        <h5>
+          Email:
+          <span id="email" style="display: inline-block"></span>
+        </h5>
+      </div>
+      <h2
+        style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #000"
+      >
+        THÔNG TIN SẢN PHẨM
+      </h2>
+      <div id="part_product" style="margin-top: 0px"></div>
+      <div class="part_total" style="margin-top: 20px">
+        <h4 style="font-size: 30px">
+          Tổng tiền:
+          <p id="product_total" style="display: inline-block; color: red"></p>
+        </h4>
+      </div>
+    </div>
+    <script>
+      let account = JSON.parse(localStorage.getItem("account"));
+      document.getElementById("username").innerHTML = account.username;
+      document.getElementById("phone").innerHTML = account.phone;
+      document.getElementById("address").innerHTML = account.address;
+      document.getElementById("email").innerHTML = account.email;
+
+      let dataList = JSON.parse(localStorage.getItem("listThanhtoan"));
+      const htmls = dataList.map((item) => {
+        return `<div class="product" style="border: 2px solid #000">
+          <div class="" style="display: flex; align-items: center">
+            <img src="${item.img}" alt="" width="130px" />
+           
+            <div>
+                <h3 class="nameProduct">${item.name}</h3>
+                <h4>
+            Giá:
+            <p style="display: inline-block; color: red; padding-top:12px">${formatToVND(
+              item.gia
+            )}</p>
+          </h4>
+            </div>
+          </div>
+          
+          <h4>
+            Số lượng:
+            <p style="display: inline-block; padding-top:12px; color: red">${
+              item.sl
+            }</p>
+          </h4>
+        </div>`;
+      });
+
+      document.getElementById("part_product").innerHTML = htmls.join("\n");
+      document.getElementById("product_total").innerHTML =
+        localStorage.getItem("Tongtien");
+
+      function formatToVND(num) {
+        const fmt = num.toLocaleString("vi-VN") + "đ";
+        return fmt;
+      }
+    </script>
+  </body>
+</html>

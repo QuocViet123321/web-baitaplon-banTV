@@ -294,6 +294,15 @@
         let tongtien = 0;
         inputSoluong[i].addEventListener("input", (e) => {
           for (i = 0; i < inputSoluong.length; i++) {
+            let nameProduct =
+              e.target.parentNode.parentNode.previousElementSibling
+                .previousElementSibling.innerHTML;
+
+            if (data[i].name == nameProduct) {
+              data[i].sl = e.target.value;
+              localStorage.setItem("listCart", JSON.stringify(data));
+            }
+
             tongtien +=
               parseInt(e.target.nextElementSibling.innerHTML) *
               parseInt(e.target.value);
@@ -313,6 +322,7 @@
               "Số lượng lớn hơn hoặc bằng 0";
           } else {
             e.target.parentNode.parentNode.nextElementSibling.innerHTML = "";
+
             total(e);
           }
         });
@@ -339,11 +349,29 @@
         return fmt;
       }
 
+      function ckDataInput() {
+        const x = document.getElementsByClassName("soluong");
+        for (i = 0; i < x.length; i++) {
+          if (parseInt(x[i].value) <= 0) {
+            return false;
+          }
+        }
+        return true;
+      }
       function thanhtoan() {
         if (data.length > 0) {
-          alert("Cảm ơn bạn đã mua hàng.");
-          localStorage.setItem("listCart", []);
-          location.reload();
+          // localStorage.setItem("thanhtoan", localStorage.getItem("listCart"));
+          if (ckDataInput()) {
+            localStorage.setItem(
+              "Tongtien",
+              document.getElementById("Tongtien").innerHTML
+            );
+            localStorage.setItem("listThanhtoan", JSON.stringify(data));
+            localStorage.setItem("listCart", []);
+            window.location.href = "Hoadon.html";
+          } else {
+            alert("Lưu ý số lượng sản phẩm phải là số nguyên dương!");
+          }
         }
       }
     </script>
