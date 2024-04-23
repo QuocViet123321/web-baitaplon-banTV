@@ -134,10 +134,6 @@
           Địa chỉ:
           <span id="address"></span>
         </h5>
-        <h5>
-          Email:
-          <span id="email" style="display: inline-block"></span>
-        </h5>
       </div>
       <h2
         style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #000"
@@ -153,11 +149,10 @@
       </div>
     </div>
     <script>
-      let account = JSON.parse(localStorage.getItem("account"));
-      document.getElementById("username").innerHTML = account.username;
+      let account = JSON.parse(localStorage.getItem("infoUser"));
+      document.getElementById("username").innerHTML = account.name;
       document.getElementById("phone").innerHTML = account.phone;
       document.getElementById("address").innerHTML = account.address;
-      document.getElementById("email").innerHTML = account.email;
 
       let dataList = JSON.parse(localStorage.getItem("listThanhtoan"));
       const htmls = dataList.map((item) => {

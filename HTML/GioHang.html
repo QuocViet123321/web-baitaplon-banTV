@@ -155,7 +155,45 @@
         </div>
       </div>
       <div class="col-12 col-md-4">
-        <div class="box_thanhtoan" style="margin-top: 0px">
+        <div
+          class="info_customer"
+          style="border: 1px solid #ccc; padding: 10px"
+        >
+          <div class="form-group">
+            <label for="">Họ và tên</label>
+            <input
+              onblur="ckHoten()"
+              id="hoten"
+              class="form-control"
+              type="text"
+              name=""
+            />
+            <span style="display: block; color: red" id="mghoten"></span>
+          </div>
+          <div class="form-group">
+            <label for="">Số điện thoại</label>
+            <input
+              onblur="ckPhone()"
+              id="phone"
+              class="form-control"
+              type="text"
+              name=""
+            />
+            <span style="display: block; color: red" id="mgphone"></span>
+          </div>
+          <div class="form-group">
+            <label for="">Địa chỉ</label>
+            <input
+              onblur="ckDiachi()"
+              id="diachi"
+              class="form-control"
+              type="text"
+              name=""
+            />
+            <span style="display: block; color: red" id="mgdiachi"></span>
+          </div>
+        </div>
+        <div class="box_thanhtoan" style="margin-top: 10px">
           <h2
             style="
               text-align: center;
@@ -361,17 +399,68 @@
       function thanhtoan() {
         if (data.length > 0) {
           // localStorage.setItem("thanhtoan", localStorage.getItem("listCart"));
-          if (ckDataInput()) {
+          if (ckDataInput() && ckHoten() && ckPhone() && ckDiachi()) {
+            // Luu thong tin tai khoan
+            const value1 = document.getElementById("hoten").value;
+            const value2 = document.getElementById("phone").value;
+            const value3 = document.getElementById("diachi").value;
+            let infoUser = {
+              name: value1,
+              phone: value2,
+              address: value3,
+            };
+            localStorage.setItem("infoUser", JSON.stringify(infoUser));
+
+            //
             localStorage.setItem(
               "Tongtien",
               document.getElementById("Tongtien").innerHTML
             );
+
             localStorage.setItem("listThanhtoan", JSON.stringify(data));
             localStorage.setItem("listCart", []);
             window.location.href = "Hoadon.html";
           } else {
-            alert("Lưu ý số lượng sản phẩm phải là số nguyên dương!");
+            // alert("Lưu ý số lượng sản phẩm phải là số nguyên dương!");
           }
+        }
+      }
+
+      function ckHoten() {
+        const value = document.getElementById("hoten").value;
+        let rg = /^([A-Z]{1}[a-z]*)(\s[A-Z]{1}[a-z]*)*(\s[A-Z]{1}[a-z]*)$/;
+        if (!rg.test(value)) {
+          document.getElementById("mghoten").innerHTML =
+            "Họ tên: Phải có ít nhất Họ, Tên. Ký tự đầu bắt buộc phải viết hoa";
+          return false;
+        } else {
+          document.getElementById("mghoten").innerHTML = "";
+          return true;
+        }
+      }
+
+      function ckPhone() {
+        const value = document.getElementById("phone").value;
+        let rg = /^(09||03||07||06||05||04)[0-9]{8}$/;
+        if (!rg.test(value)) {
+          document.getElementById("mgphone").innerHTML =
+            "Điện thoại phải là số điện thoại 10 ký tự số, bắt đầu là 09, 03, 07, 06, 05, 04 !";
+          return false;
+        } else {
+          document.getElementById("mgphone").innerHTML = "";
+          return true;
+        }
+      }
+
+      function ckDiachi() {
+        const value = document.getElementById("diachi").value;
+        if (value == "") {
+          document.getElementById("mgdiachi").innerHTML =
+            "Địa chỉ không được rỗng !";
+          return false;
+        } else {
+          document.getElementById("mgdiachi").innerHTML = "";
+          return true;
         }
       }
     </script>
