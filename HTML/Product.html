@@ -37,6 +37,22 @@
         top: -5%;
         right: 40%;
       }
+
+      [class*="col-"] {
+        margin: 0;
+      }
+    
+      
+      img {
+        width: 100%;
+      }
+
+      .card-cart h3 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+      }
     </style>
   </head>
   <body>
@@ -356,6 +372,203 @@
         </div>
       </div>
     </div>
+
+    <!--Modal Mua ngay -->
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h3 class="modal-title text-danger">Thanh Toán</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div
+          class="card-cart row"
+          style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); margin-block: 10px"
+        >
+          <div class="col-4">
+            <div class="des_cart">
+              <img id="modal-img" src="../IMG/Tivi/tivi10.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-8" style="padding-right: 0">
+            <h3 id="modal-name"></h3>
+            <h4>
+              Giá:
+              <p id="modal-gia" class="text-danger" style="display: inline-block">120000000
+              VND</p>
+            </h4>
+            <div class="input-group">
+              <span class="input-group-text " style="font-size: 14px"
+                >Số lượng</span
+              >
+              <span style="width: 120px"
+                ><input
+                  value="1"
+                  style="border-radius: 0"
+                  type="number"
+                  min="1"
+                  class="form-control soluong"
+              />
+              <p style="display:none"></p></span>
+            </div>
+            <span style="display:block;color:red;"></span>
+          </div>
+          <div
+          class="info_customer"
+          style="border: 1px solid #ccc; padding: 10px"
+        >
+        <h3>Thông tin khách hàng</h3>
+          <div class="form-group">
+            <label for="">Họ và tên</label>
+            <input
+              onblur="ckHoten()"
+              id="hoten"
+              class="form-control"
+              type="text"
+              name=""
+            />
+            <span style="display: block; color: red" id="mghoten"></span>
+          </div>
+          <div class="form-group">
+            <label for="">Số điện thoại</label>
+            <input
+              onblur="ckPhone()"
+              id="phone"
+              class="form-control"
+              type="text"
+              name=""
+            />
+            <span style="display: block; color: red" id="mgphone"></span>
+          </div>
+          <div class="form-group">
+           
+            <label for="">Địa chỉ</label>
+            <input
+              onblur="ckDiachi()"
+              id="diachi"
+              class="form-control"
+              type="text"
+              name=""
+            />
+            <span style="display: block; color: red" id="mgdiachi"></span>
+          </div>
+        </div>
+        </div>
+        <div class="">
+          <h3 style="display: inline-block; float: left;">Tổng tiền: <h3 id="tongtien" class="text-danger" style="display: inline-block;">12000000vnd</h3> </h3>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        
+        <button onclick="dathang()" type="button" class="btn btn-danger" >Đặt hàng</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal" id="modalHoadon">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h3 class="modal-title text-danger">Hóa đơn</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div
+          class="card-cart row"
+          style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); margin-block: 10px"
+        >
+          <div class="col-4">
+            <div class="des_cart">
+              <img id="modal-img" src="../IMG/Tivi/tivi10.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-8" style="padding-right: 0">
+            <h3 id="modal-name"></h3>
+            <h4>
+              Giá:
+              <p id="modal-gia" class="text-danger" style="display: inline-block">120000000
+              VND</p>
+            </h4>
+            <div class="input-group">
+              <span class="input-group-text " style="font-size: 14px">Số lượng:</span>
+              <span id="soluong" style="width: 120px"
+                >12</span>
+              
+            </div>
+            <span style="display:block;color:red;"></span>
+          </div>
+          <div
+          class="info_customer"
+          style="border: 1px solid #ccc; padding: 10px"
+        >
+        <h3>Thông tin khách hàng</h3>
+          <div class="form-group">
+            <label for="">Họ và tên</label>
+            <input
+              
+              id="HoaDonhoten"
+              class="form-control"
+              type="text"
+              name=""
+            />
+            <span style="display: block; color: red" id="mghoten"></span>
+          </div>
+          <div class="form-group">
+            <label for="">Số điện thoại</label>
+            <input
+              
+              id="HoaDonphone"
+              class="form-control"
+              type="text"
+              name=""
+            />
+            <span style="display: block; color: red" id="mgphone"></span>
+          </div>
+          <div class="form-group">
+           
+            <label for="">Địa chỉ</label>
+            <input
+              
+              id="HoaDondiachi"
+              class="form-control"
+              type="text"
+              name=""
+            />
+            <span style="display: block; color: red" id="mgdiachi"></span>
+          </div>
+        </div>
+        </div>
+        <div class="">
+          <h3 style="display: inline-block; float: left;">Tổng tiền: <h3 id="tongtien" class="text-danger" style="display: inline-block;">12000000vnd</h3> </h3>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        
+        <button onclick="dathang()" type="button" class="btn btn-danger" >Đặt hàng</button>
+      </div>
+
+    </div>
+  </div>
+</div>
     <!-- JAVASCRIP -->
     <script>
       document.getElementsByClassName("detail-title")[0].innerHTML =
@@ -372,7 +585,22 @@
         localStorage.getItem("hang");
       document.getElementById("des_xx").innerHTML =
         localStorage.getItem("xuatxu");
-
+      document.getElementById('modal-name').innerHTML = localStorage.getItem("name");
+      document.getElementById('modal-gia').innerHTML = formatToVND(parseInt(localStorage.getItem("gia")));
+      document.getElementById('modal-img').innerHTML = localStorage.getItem("img");
+      const tongtien = document.getElementById('tongtien');
+      tongtien.innerHTML = formatToVND(parseInt(localStorage.getItem("gia")));
+      let toltal = 0;
+      document.getElementsByClassName('soluong')[0].addEventListener('input',(e)=>{
+        if(e.target.value > 0){
+          toltal += e.target.value * parseInt(localStorage.getItem("gia"));
+          tongtien.innerHTML = formatToVND(parseInt(toltal));
+        }else{
+          e.target.parentNode.parentNode.nextElementSibling.innerHTML =
+              "Số lượng lớn hơn hoặc bằng 0";
+        }
+        
+      })
 
         // Call event
         addCart()
@@ -407,13 +635,17 @@
             })
         }
 
-        function muangay(){
+        function muangay(e){
           if(localStorage.getItem('isAccount')){
-            alert('Cảm ơn bạn đã mua hàng');
+            const galleryModal = new bootstrap.Modal(document.getElementById('myModal'), { keyboard: false });
+            galleryModal.show();
           }else{
             alert('Bạn phải đăng nhập !')
           }
         }
+
+    
+
 
 
         function formatToVND(num) {
@@ -421,6 +653,84 @@
           fmt += "đ";
           return fmt;
         }
+
+        function ckHoten() {
+        const value = document.getElementById("hoten").value;
+        let rg = /^([A-Z]{1}[a-z]*)(\s[A-Z]{1}[a-z]*)*(\s[A-Z]{1}[a-z]*)$/;
+        if (!rg.test(value)) {
+          document.getElementById("mghoten").innerHTML =
+            "Họ tên: Phải có ít nhất Họ, Tên. Ký tự đầu bắt buộc phải viết hoa";
+          return false;
+        } else {
+          document.getElementById("mghoten").innerHTML = "";
+          return true;
+        }
+      }
+
+      function ckPhone() {
+        const value = document.getElementById("phone").value;
+        let rg = /^(09||03||07||06||05||04)[0-9]{8}$/;
+        if (!rg.test(value)) {
+          document.getElementById("mgphone").innerHTML =
+            "Điện thoại phải là số điện thoại 10 ký tự số, bắt đầu là 09, 03, 07, 06, 05, 04 !";
+          return false;
+        } else {
+          document.getElementById("mgphone").innerHTML = "";
+          return true;
+        }
+      }
+
+      function ckDiachi() {
+        const value = document.getElementById("diachi").value;
+        if (value == "") {
+          document.getElementById("mgdiachi").innerHTML =
+            "Địa chỉ không được rỗng !";
+          return false;
+        } else {
+          document.getElementById("mgdiachi").innerHTML = "";
+          return true;
+        }
+      }
+
+      function ckDataInput() {
+        const x = document.getElementsByClassName("soluong");
+        for (i = 0; i < x.length; i++) {
+          if (parseInt(x[i].value) <= 0 || isNaN(parseInt(x[i].value))) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function dathang(){
+        if(ckHoten() && ckPhone() && ckDiachi() && ckDataInput() ){
+          const value1 = document.getElementById("hoten").value;
+            const value2 = document.getElementById("phone").value;
+            const value3 = document.getElementById("diachi").value;
+            let infoUser = {
+              name: value1,
+              phone: value2,
+              address: value3,
+            };
+            localStorage.setItem("infoUser", JSON.stringify(infoUser));
+
+
+            let Muangayproduct = {
+              name : localStorage.getItem("name"),
+              gia : localStorage.getItem("gia"),
+              img: localStorage.getItem("img"),
+              soluong: document.getElementsByClassName("soluong")[0].value,
+              tongtien: document.getElementById("tongtien").innerHTML
+            }
+            
+            localStorage.setItem("Muangayproduct", JSON.stringify(Muangayproduct));
+            window.location.href = "HoadonMuangay.html";
+        }else{
+          
+        }
+      }
+      
+
     </script>
     <script>
       var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))

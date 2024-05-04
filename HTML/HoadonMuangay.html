@@ -140,7 +140,32 @@
       >
         THÔNG TIN SẢN PHẨM
       </h2>
-      <div id="part_product" style="margin-top: 0px"></div>
+      <div id="part_product" style="margin-top: 0px">
+        <div class="product" style="border: 2px solid #000">
+          <div class="" style="display: flex; align-items: center">
+            <img id="hoadon_img" src="" alt="" width="130px" />
+
+            <div>
+              <h3 id="hoadon_name" class="nameProduct"></h3>
+              <h4>
+                Giá:
+                <p
+                  id="hoadon_gia"
+                  style="display: inline-block; color: red; padding-top: 12px"
+                ></p>
+              </h4>
+            </div>
+          </div>
+
+          <h4>
+            Số lượng:
+            <p
+              id="hoadon_soluong"
+              style="display: inline-block; padding-top: 12px; color: red"
+            ></p>
+          </h4>
+        </div>
+      </div>
       <div class="part_total" style="margin-top: 20px">
         <h4 style="font-size: 30px">
           Tổng tiền:
@@ -150,42 +175,28 @@
     </div>
     <script>
       let account = JSON.parse(localStorage.getItem("infoUser"));
+      let product = JSON.parse(localStorage.getItem("Muangayproduct"));
       document.getElementById("username").innerHTML = account.name;
       document.getElementById("phone").innerHTML = account.phone;
       document.getElementById("address").innerHTML = account.address;
+      document.getElementById("product_total").innerHTML = product.tongtien;
+      document.getElementById("hoadon_img").src = product.img;
+      document.getElementById("hoadon_soluong").innerHTML = product.soluong;
+      document.getElementById("hoadon_gia").innerHTML = formatToVND(
+        parseInt(product.gia)
+      );
+      document.getElementById("hoadon_name").innerHTML = product.name;
 
       let dataList = JSON.parse(localStorage.getItem("listThanhtoan"));
-      const htmls = dataList.map((item) => {
-        return `<div class="product" style="border: 2px solid #000">
-          <div class="" style="display: flex; align-items: center">
-            <img src="${item.img}" alt="" width="130px" />
-           
-            <div>
-                <h3 class="nameProduct">${item.name}</h3>
-                <h4>
-            Giá:
-            <p style="display: inline-block; color: red; padding-top:12px">${formatToVND(
-              parseInt(item.gia)
-            )}</p>
-          </h4>
-            </div>
-          </div>
-          
-          <h4>
-            Số lượng:
-            <p style="display: inline-block; padding-top:12px; color: red">${
-              item.sl
-            }</p>
-          </h4>
-        </div>`;
-      });
-
-      document.getElementById("part_product").innerHTML = htmls.join("\n");
-      document.getElementById("product_total").innerHTML =
-        localStorage.getItem("Tongtien");
 
       function formatToVND(num) {
         const fmt = num.toLocaleString("vi-VN") + "đ";
+        return fmt;
+      }
+
+      function formatToVND(num) {
+        let fmt = num.toLocaleString("vi-VN");
+        fmt += "đ";
         return fmt;
       }
     </script>
